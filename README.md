@@ -1,4 +1,4 @@
-Telehack
+## Telehack
 
     Telehack is a simulation of a stylized arpanet/usenet, circa 1985-1990.
     It is a full multi-user simulation, including 26,600+ simulated hosts
@@ -6,13 +6,11 @@ Telehack
     adventure and IF games, a working BASIC interpreter with a library of
     programs to run, simulated historical users, and more.
 
-Connecting
-----------
+## Connecting
 
 On the web: https://telehack.com/
 
-Telehack supports the telnet protocol on ports 23, 1337, 8080, and 31173.
-Open a shell and type:
+Telehack supports the telnet protocol on ports 23, 1337, 8080, and 31173. Open a shell and type:
 
     telnet telehack.com
 
@@ -20,28 +18,19 @@ Telehack also supports the secure shell (SSH) protocol on port 2222:
 
     ssh -p 2222 guest@telehack.com
 
-HTTPS and SSH provide encryption, but telnet provides no encryption. After
-creating a username, you can connect via SSH with your username instead of
-guest. Also, you can optionally add a public key with the SET KEY command.
+HTTPS and SSH provide encryption, but telnet provides no encryption. After creating a username, you can connect via SSH with your username instead of guest. Also, you can optionally add a public key with the `SET KEY` command.
 
+## About this Document
 
-About this Document
--------------------
-
-Telehack is case-insensitive.  Commands are often shown in uppercase to
-distinguish them from surrounding text.  Note that you do not need to type
-commands in all-caps.  For example:
+Telehack is case-insensitive. Commands are often shown in uppercase to distinguish them from surrounding text. Note that you do not need to type commands in all-caps. For example:
 
     Type DIR for a list of files
 
 You may type DIR or dir to obtain a list of files.
 
-In help messages, <> signifies required arguments to commands, whereas
-[] signifies optional arguments.  The pipe symbol | signifies "or" or an
-alternative.  For example:
+In help messages, \<\> signifies required arguments to commands, whereas \[\] signifies optional arguments. The pipe symbol \| signifies "or" or an alternative. For example:
 
-Getting Help
-------------
+## Getting Help
 
 You can type ? at any prompt to get a list of available commands:
 
@@ -59,36 +48,28 @@ You can type ? at any prompt to get a list of available commands:
       users       uumap       uupath      uuplot      weather     when
       zc          zork        zrun
 
-The HELP command provides one-line descriptions of command functions,
-including any modifier arguments that may be available. Examples:
+The HELP command provides one-line descriptions of command functions, including any modifier arguments that may be available. Examples:
 
     @ help
     @ help telnet
     @ help ftp
 
+## Getting Unstuck
 
-Getting Unstuck
----------------
+Any command may be terminated by typing \^C (control-C). To log out of a remote host or exit a subshell, type \^D (control-D), EXIT or QUIT.
 
-Any command may be terminated by typing ^C (control-C).  To log out of a
-remote host or exit a subshell, type ^D (control-D), EXIT or QUIT.
+## Quick Fun
 
-Quick Fun
----------
+Type `STARWARS` to view the pinnacle of ASCII-mation, a full-length
+rendition of Star Wars in ASCII.
 
-Type STARWARS to view the pinnacle of ASCII-mation, a full-length rendition
-of Star Wars in ASCII.
-
-Typing JOKE will display a joke randomly selected from a massive unified
-historical arpanet/caltech joke database.
+Typing `JOKE` will display a joke randomly selected from a massive unified historical arpanet/caltech joke database.
 
 Type Aquarium to watch an animated aquarium in ASCII art.
 
-NLI Lobby
----------
+## NLI Lobby
 
-When you first connect to Telehack, you will be in the not-logged-in
-lobby.  The NLI lobby is indicated by the '.' prompt:
+When you first connect to Telehack, you will be in the not-logged-in lobby. The NLI lobby is indicated by the '.' prompt:
 
     $ telnet telehack.com Trying 64.13.147.30...  Connected
     to telehack.com.  Escape character is '^]'.
@@ -122,24 +103,15 @@ A limited subset of commands are available in the lobby.
 
 To login or create a new account, type LOGIN.
 
+## Network Hosts
 
-Network Hosts
--------------
+There are approximately 26,600 virtual hosts on the Telehack network. These represent systems that were on the early Usenet/arpanet as well as defunct BBS systems from the 80's and 90's.
 
-There are approximately 26,600 virtual hosts on the Telehack network.
-These represent systems that were on the early Usenet/arpanet as well
-as defunct BBS systems from the 80's and 90's.
+Type HOSTS to see a partial list of network hosts. Type HELP HOSTS for more information on the hosts command.
 
-Type HOSTS to see a partial list of network hosts.  Type HELP HOSTS for
-more information on the hosts command.
+A collection of retro files has been distributed across the hosts in the network. The files were sourced from the extensive archive assembled by Jason Scott of Textfiles.com as well as other sources.
 
-A collection of retro files has been distributed across the hosts in the
-network.  The files were sourced from the extensive archive assembled by
-Jason Scott of Textfiles.com as well as other sources.
-
-
-Telnetting to Hosts
--------------------
+## Telnetting to Hosts
 
 You may telnet to any host appearing in your netstat list:
 
@@ -174,38 +146,28 @@ You may telnet to any host appearing in your netstat list:
 
     mimsy$
 
-If you have not yet hacked into a host, you can try to login as the guest
-user.  The full set of commands on the host may not be available if you are
-logged in as guest.
+If you have not yet hacked into a host, you can try to login as the guest user. The full set of commands on the host may not be available if you are logged in as guest.
 
-The * symbol in the netstat output denotes that you have a login account on
-that host, and the ! symbol denotes that you have root there.  These symbols
-also appear in the output of other commands, such as uuplot.
+The \* symbol in the netstat output denotes that you have a login account on that host, and the ! symbol denotes that you have root there. These symbols also appear in the output of other commands, such as uuplot.
 
-
-Dialing a host
---------------
+## Dialing a host
 
 You may connect to a host by using the DIAL command.
 
-	@dial 3148372840
-  dialing ATDT (314) 837-2840    CONNECT 9600
+    @dial 3148372840
+
+dialing ATDT (314) 837-2840 CONNECT 9600
 
 Connected to THEOASIS
 
-
-BASIC Interpreter
------------------
+## BASIC Interpreter
 
 To enter the basic interpreter, type BASIC.
 
     @ basic
     Dartmouth DTSS TeleBASIC (c) 1964,1966,1969,1970,1971,1979
 
-The basic interpreter subsystem has a number of historical programs
-compiled from the SIMTEL archives as well as other sources. To see a full
-list of available programs, type DIR within basic.  You can load a program
-with LOAD or begin execution with RUN.
+The basic interpreter subsystem has a number of historical programs compiled from the SIMTEL archives as well as other sources. To see a full list of available programs, type DIR within basic. You can load a program with LOAD or begin execution with RUN.
 
 Basic commands are:
 
@@ -221,7 +183,6 @@ Basic commands are:
     run <program>            load and run the specified program file
     save <file>              save a user program
 
-
 Example basic session:
 
     @ basic
@@ -229,7 +190,7 @@ Example basic session:
     > ?
     Command, one of the following:
       delete  dir     help    list    load    quit    run     renumber
-	  save
+      save
     > dir
       23matches.bas    3dplot.bas       aceyducey.bas    aceyducy.bas
       astrnmy2.bas     bar.bas          basketball.bas   basketbl.bas
@@ -279,12 +240,9 @@ Example basic session:
 
     WHAT'S YOUR NAME?
 
+## Remote Terminal Monitoring
 
-Remote Terminal Monitoring
---------------------------
-
-The link command will connect a remote user's tty to your tty.  This will
-let you assist the remote user by being able to view the remote output.
+The link command will connect a remote user's tty to your tty. This will let you assist the remote user by being able to view the remote output.
 
     @ link <user or port>
 
@@ -293,15 +251,11 @@ In this case, the other user would see something like
     .
     %link from port 16 user forbin
 
-And their session from that point would be mirrored on the linking
-user's terminal.
+And their session from that point would be mirrored on the linking user's terminal.
 
-There is also a separate facility within ptycon to allow simultaneous
-monitoring of all connected ports.
+There is also a separate facility within ptycon to allow simultaneous monitoring of all connected ports.
 
-
-Finger from Outside
--------------------
+## Finger from Outside
 
 Telehack also responds to finger requests from the outside Internet on port 79:
 
@@ -330,12 +284,9 @@ Telehack also responds to finger requests from the outside Internet on port 79:
          HACKER      Hack the Planet                  29-Jan-11  22:31:48
          ACCT        Registered User                  29-Jan-11  22:23:17
 
+## How to enable telnet in Windows 7, 10, and 11
 
-How to enable telnet in Windows 7, 10, and 11
----------------------------------------------
-
-Windows 7, 10 and 11 ship with a telnet client, but it is shut off by default.
-To enable it, do the following:
+Windows 7, 10 and 11 ship with a telnet client, but it is shut off by default. To enable it, do the following:
 
     Start
     Control Panel
@@ -347,4 +298,3 @@ To enable it, do the following:
 After that, you can open a command prompt and type
 
     telnet telehack.com
-
